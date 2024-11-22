@@ -9,7 +9,8 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-const ATLAS_URI = "mongodb+srv://chenshuhang329:qwer1234@cs239.havypff.mongodb.net/myDatabase?retryWrites=true&w=majority&appName=CS239";
+require('dotenv').config();
+const ATLAS_URI = process.env.ATLAS_URI;
 
 mongoose.connect(ATLAS_URI)
   .then(() => console.log('Connected to MongoDB'))
